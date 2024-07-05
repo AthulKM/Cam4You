@@ -16,7 +16,10 @@ const AdminLogin = () => {
         console.log("Password is entered");
     }
     function navToAdminPanel() {
+        alert("Redirecting without validating authentication");
         navAdminLogin('/AdminPanel');
+
+        
     }
     
     return (

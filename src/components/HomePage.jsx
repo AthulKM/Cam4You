@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
       <div>
           <h1>This is the Home Page (Contents will be added soon)</h1>
-          <button onClick={buttonClicked}>Check this page(login page)</button>
+          <button onClick={buttonClicked}>Check out this page(login page)</button>
     </div>
   )
 }
