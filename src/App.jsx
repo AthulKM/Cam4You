@@ -4,27 +4,27 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Login from './components/Login'
 import AdminLogin from './components/AdminLogin';
 import UserLogin from './components/UserLogin';
+import { Nav, Navbar, Container } from 'react-bootstrap';
+import HomePage from './components/HomePage';
+import AdminPanel from './components/AdminPanel';
 
 
 
 
 
 const App = () => {
-  const navigate = useNavigate();
-  const adminLoginClicked = () => navigate('/AdminLogin');
-  const userLoginClicked = ()=>navigate('/UserLogin')
+  
 
 
   return (
 
-    < div className='hCentered w-100 h-100'>
-      <div className='ta-center w-100 h-100'>
-        <h2>Choose your profile type : </h2>
-        <div className='f-dir-col'>
-          <button className='userLogin hCentered mt-10' onClick={userLoginClicked}>Login as a User</button>
-          <button className='adminLogin hCentered mt-10' onClick={adminLoginClicked}> Login as an admin</button>
-        </div>
-      </div>
+    <>
+       <Navbar expand="lg" className="bg-body-tertiary">
+        <Container className="header">
+          <Navbar.Brand href="/HomePage">BuyCam</Navbar.Brand>
+          
+        </Container>
+      </Navbar>
 
 
 
@@ -32,13 +32,15 @@ const App = () => {
 
       <Routes>
         {/* <Route path='/' element={<App/>}/> */}
-        <Route path='/Login' element={<Login />} />
+        <Route path='/' element={<Login />} />
         <Route path='/AdminLogin' element={<AdminLogin />} />
-        <Route path='/UserLogin' element={<UserLogin/>} />
+        <Route path='/UserLogin' element={<UserLogin />} />
+        <Route path='/HomePage' element={<HomePage />} />
+        <Route path='/AdminPanel' element={ <AdminPanel/>} />
       </Routes>
 
 
-    </div>
+    </>
 
 
   )
