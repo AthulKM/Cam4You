@@ -37,17 +37,46 @@ body {
   color: rgb(98, 13, 13);
   font-weight: 700;
 }
-.addNewModal {
+.addNewCameraModal {
   border: 3px solid white;
   padding: 10px;
   position: absolute;
+  
   top:50px;
-  left:300px;
+  left:400px;
   background:yellowgreen;
   border-radius: 10px;
   height: 500px;
   color: brown;
+  width: 300px;
 }
+.addNewAdminModal {
+  border: 3px solid white;
+  padding: 10px;
+  position: absolute;
+  
+  top:50px;
+  left:400px;
+  background:yellowgreen;
+  border-radius: 10px;
+  height: 500px;
+  color: brown;
+  width: 300px;
+}
+.addNewAdminBtn {
+  background: wheat;
+  color: green;
+  font-weight: 800;
+}
+.modal-dialog {
+  padding : 10px;
+}
+input {
+  background: rgba(255, 255, 255, 0.444);
+  color: darkgreen;
+  width: 200px;
+}
+
 .adminPanel-newProductAddTable .buttons {
   justify-content: center;
   display: flex;
