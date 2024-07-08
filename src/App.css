@@ -1,3 +1,8 @@
+body {
+  background: url('./images/camera_main_bg.jpg');
+  
+}
+
 #root {
   width: 100%;
   height: 100%;
@@ -10,18 +15,27 @@
 
 }
 .adminPanelContainer {
-  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
+  
   padding: 20px;
+
 
 }
 .adminPanel-newProductAddTable {
+  color: rgba(165, 42, 42, 0.049);
   border: 2px solid white;
   padding: 20px;
   margin-top: 20px;
+  border-radius: 10px;
 }
 .tableHead {
-  background: yellowgreen;
-  color: brown;
+  background: rgba(203, 222, 166, 0.833);
+  color: rgba(82, 38, 7, 0.972);
+}
+.adminPanel-newProductAddTable td {
+  background: rgba(203, 222, 166, 0.833);
+  color: rgb(98, 13, 13);
+  font-weight: 700;
 }
 .addNewModal {
   border: 3px solid white;
@@ -34,7 +48,11 @@
   height: 500px;
   color: brown;
 }
-
+.adminPanel-newProductAddTable .buttons {
+  justify-content: center;
+  display: flex;
+  grid-gap: 25px;
+}
 .hCentered {
   margin: 0 auto;
 }
@@ -69,6 +87,20 @@
   height: 100%;
 }
 
+.btn-red {
+  background: rgba(255, 0, 0, 0.583);
+  font-weight: 800;
+}
+.btn-yellow {
+  background: rgb(255, 255, 0,0.583);
+  color: brown;
+  font-weight: 800;
+}
+.btn-green {
+  background: rgb(0, 128, 0,0.583);
+  font-weight: 800;
+
+}
 .admin-login-form {
   margin: 0 auto;
   width: 250px;
@@ -78,11 +110,22 @@ body {
 }
 .navbar{
   position: absolute;
-  
+  width: 100%;
   top: 50px;
   left: 0;
-
+  
 }
+
+.navbar .header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  
+  justify-content: space-between;
+  
+}
+
 .navbar-brand {
   margin-left: 50px;
   border: 3px solid green;
@@ -93,7 +136,39 @@ body {
   border-radius: 8px;
 
 }
+
+.navbar .header .links {
+  
+  text-align: center;
+  margin: auto 50px auto 0;
+  padding: 10px;
+  border: 2px solid antiquewhite;
+  border-radius: 10px;
+  height: 30px;
+  width: 180px;
+
+  
+}
+.navbar .header .links a{
+  vertical-align: middle;
+  color: antiquewhite;
+
+}
 table.bordered {
   border: 1px solid white;
 
+}
+
+/* Login Page */
+.loginContent {
+  background-color: rgba(0,0,0,0.3);
+  
+  
+}
+.loginContent h2 {
+  font-size: 40px;
+  padding: 10px;
+}
+.loginContent .loginButtons {
+  padding: 10px;
 }

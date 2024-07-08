@@ -14,15 +14,17 @@ import AdminPanel from './components/AdminPanel';
 
 const App = () => {
   
-
+  const navigations = useNavigate();
 
   return (
 
     <>
        <Navbar expand="lg" className="bg-body-tertiary">
         <Container className="header">
-          <Navbar.Brand href="/HomePage">BuyCam</Navbar.Brand>
-          
+          <Navbar.Brand href="/HomePage">Cam4You</Navbar.Brand>
+          <Nav className='links'>
+            <Nav.Link href="/">Log in / Sign Up</Nav.Link>
+          </Nav>
         </Container>
       </Navbar>
 
@@ -33,9 +35,9 @@ const App = () => {
       <Routes>
         {/* <Route path='/' element={<App/>}/> */}
         <Route path='/' element={<Login />} />
+        <Route path='/HomePage' element={<HomePage />} />
         <Route path='/AdminLogin' element={<AdminLogin />} />
         <Route path='/UserLogin' element={<UserLogin />} />
-        <Route path='/HomePage' element={<HomePage />} />
         <Route path='/AdminPanel' element={ <AdminPanel/>} />
       </Routes>
 

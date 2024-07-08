@@ -43,41 +43,49 @@ const AdminPanel = () => {
               <Table className='striped bordered hover w-100'>
       <thead className='tableHead'>
         <tr>
-          <th>#</th>
+                              <th>#</th>
+                              <th>Model</th>
+                              <th>Brand</th>
           <th>Category</th>
-          <th>Price</th>
+          <th>Price in <span>&#x20B9;</span></th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
+                              <td>1</td>
+                              <td>EOS 500D</td>
+                              <td>Canon</td>
           <td>Portrait Photography</td>
-          <td>10k</td>
+          <td>75,000</td>
           <td className='buttons f-dir-row'>
-            <button>+</button>
-            <button>-</button>
-            <button>Edit</button>
+            <button className='btn-yellow'>Edit</button>
+            <button className='btn-red'>Remove</button>
+            
           </td>
         </tr>
         <tr>
-          <td>2</td>
+                              <td>2</td>
+                              <td>Alpha III</td>
+                              <td>Sony</td>
           <td>WildLife Photography</td>
-          <td>35k</td>
+          <td>86,000</td>
           <td className='buttons f-dir-row'>
-            <button>+</button>
-            <button>-</button>
-            <button>Edit</button>
+            <button className='btn-yellow'>Edit</button>
+            <button className='btn-red'>Remove</button>
+            
           </td>
         </tr>
         <tr>
-          <td>3</td>
+                              <td>3</td>
+                              <td>D5500</td>
+                              <td>Nikon</td>
           <td>Street Photography</td>
-          <td>40k</td>
+          <td>55,000</td>
           <td className='buttons f-dir-row'>
-            <button>+</button>
-            <button>-</button>
-            <button>Edit</button>
+            <button className='btn-yellow'>Edit</button>
+            <button className='btn-red'>Remove</button>
+            
           </td>
         </tr>
       </tbody>
