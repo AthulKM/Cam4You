@@ -1,4 +1,5 @@
 import { Children, createContext, useState } from "react";
+import AdminPanel from "./AdminPanel";
 
 const ProductContext = createContext({
     products: [{
@@ -6,16 +7,21 @@ const ProductContext = createContext({
         model: "eos",
         brand: "canon",
         category: "Photos",
-        price: 200000,
+        price: 0,
         
     }],
-    setProducts: () => { },
+    
     addProduct: () => { },
+    updateProduct: () => {},
+    deleteProduct: () => {},
+
+        
 });
 
 const ProductProvider = ({ Children }) => {
     const [products, setProducts] = useState([]);
-    const addProduct=(newProduct)=>  {
+    const addProduct = (newProduct) => {
+        
         setProducts((prevProducts) => [...prevProducts, newProduct]);
     };
     const updateProduct = (updatedProduct) => {
@@ -31,7 +37,7 @@ const ProductProvider = ({ Children }) => {
         );
       };
     return (
-        <ProductContext.Provider value={{ products,addProduct}}>
+        <ProductContext.Provider value={{ products,addProduct,updateProduct ,deleteProduct}}>
             {Children}
         </ProductContext.Provider>
     );

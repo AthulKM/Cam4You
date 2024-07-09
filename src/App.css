@@ -201,3 +201,14 @@ table.bordered {
 .loginContent .loginButtons {
   padding: 10px;
 }
+
+
+/* HomePage */
+
+section.mainSection .container {
+  padding: 0 50px;
+}
+section.mainSection .container .searchArea {
+  display: flex;
+  grid-gap: 30px;
+}

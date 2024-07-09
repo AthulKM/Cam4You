@@ -7,6 +7,7 @@ import UserLogin from './components/UserLogin';
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import HomePage from './components/HomePage';
 import AdminPanel from './components/AdminPanel';
+import { ProductContext } from './components/ProductContext';
 
 
 
@@ -43,7 +44,7 @@ const App = () => {
 
 
     </>
-
+    
 
   )
 }

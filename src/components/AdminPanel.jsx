@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Container, Row, Button, Modal } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import { useState } from 'react';
-import { ProductContext } from './ProductContext';
+import { ProductContext, ProductProvider } from './ProductContext';
 
 
 const AdminPanel = () => {
@@ -12,7 +12,7 @@ const AdminPanel = () => {
   
   const [newProduct, setNewProduct] = useState({
     model: "",
-    brand: "Canon",
+    brand: "",
     category: "",
     price: 0,
   });
@@ -47,6 +47,7 @@ const AdminPanel = () => {
     
 
     addProduct(newProduct);
+    console.log(newProduct);
     setShow(false);
     setNewProduct([{
       id: Date.now(),
@@ -56,6 +57,7 @@ const AdminPanel = () => {
       price: 0,
         
     }])
+    console.log(newProduct);
   }
   const handleSaveAdmin = () => {
     setAdmins([...admins, newAdmin]);
@@ -77,6 +79,7 @@ const AdminPanel = () => {
          
       
     <div>
+      
       <Modal className='addNewAdminModal'
         show={showAdminModal}
         onHide={handleAdminModalClose}
@@ -210,7 +213,9 @@ const AdminPanel = () => {
         </Row>
         
         </Container>
-  </div>
+        
+      </div>
+      
   )
 }
 
