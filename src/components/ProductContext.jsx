@@ -9,12 +9,13 @@ const ProductContext = createContext({
         price: 200000,
         
     }],
-    setProducts: () => {},
+    setProducts: () => { },
+    addProduct: () => { },
 });
 
 const ProductProvider = ({ Children }) => {
     const [products, setProducts] = useState([]);
-    const addProduct = (newProduct) => {
+    const addProduct=(newProduct)=>  {
         setProducts((prevProducts) => [...prevProducts, newProduct]);
     };
     const updateProduct = (updatedProduct) => {

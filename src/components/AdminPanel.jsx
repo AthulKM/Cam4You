@@ -6,7 +6,7 @@ import { ProductContext } from './ProductContext';
 
 
 const AdminPanel = () => {
-  const { products, addProduct } = useContext(ProductContext);
+  const {products, addProduct} = useContext(ProductContext);
   const [show, setShow] = useState(false);
   const [showAdminModal, setShowAdminModal] = useState(false);
   
