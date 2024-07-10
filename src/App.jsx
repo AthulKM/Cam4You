@@ -18,47 +18,41 @@ const App = () => {
 
 
   return (
-    <div>
-      <h1>
-        hello there
-      </h1>
-    </div>
+    
 
-  //   <>
-  //     <div>
-  //       <h1>Hello</h1>
-  //     </div>
+    <>
       
-  //      <Navbar expand="lg" className="bg-body-tertiary">
-  //       <Container className="header">
-  //         <Navbar.Brand href="/HomePage">Cam4You</Navbar.Brand>
-  //         <Nav className='links'>
-  //           <Nav.Link href="/">Log in / Sign Up</Nav.Link>
-  //         </Nav>
-  //       </Container>
-  //     </Navbar>
+      
+       <Navbar expand="lg" className="bg-body-tertiary">
+        <Container className="header">
+          <Navbar.Brand href="/HomePage">Cam4You</Navbar.Brand>
+          <Nav className='links'>
+            <Nav.Link href="/">Log in / Sign Up</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
 
 
 
 
 
-  //     <Routes>
-  //       {/* <Route path='/' element={<App/>}/> */}
-  //       <Route path='/' element={<Login/>} />
-  //       <Route path='/HomePage' element={<HomePage />} />
-  //       <Route path='/AdminLogin' element={<AdminLogin />} />
-  //       <Route path='/UserLogin' element={<UserLogin />} />
-  //       <Route path='/AdminPanel' element={ <AdminPanel/>} />
-  //     </Routes>
+      <Routes>
+        {/* <Route path='/' element={<App/>}/> */}
+        <Route path='/' element={<Login/>} />
+        <Route path='/HomePage' element={<HomePage />} />
+        <Route path='/AdminLogin' element={<AdminLogin />} />
+        <Route path='/UserLogin' element={<UserLogin />} />
+        <Route path='/AdminPanel' element={ <AdminPanel/>} />
+      </Routes>
 
 
       
   
-  //     <ProductProvider>
-  //       <AdminPanel/>
-  //  </ProductProvider>
+      {/* <ProductProvider>
+        <AdminPanel/>
+   </ProductProvider> */}
   
-  //   </>
+    </>
     
     
 

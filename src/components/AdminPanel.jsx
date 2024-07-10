@@ -47,12 +47,14 @@ const AdminPanel = () => {
   const handleSaveProduct = () => {
     addProduct({ id: Date.now(), ...newProduct });
     setShow(false);
+    console.log(products);
     setNewProduct({
       model: "",
       brand: "",
       category: "",
       price: 0,
     });
+    
   };
   const handleSaveAdmin = () => {
     setAdmins([...admins, newAdmin]);
@@ -75,6 +77,7 @@ const AdminPanel = () => {
 
   const handleRemoveProduct = (productId) => {
     removeProduct(productId);
+    console.log(products);
   };
 
   const handleEditChange = (event) => {
