@@ -13,8 +13,8 @@ const AdminPanel = () => {
   const { admins, addAdmin, updateAdmin, removeAdmin } = useContext(AdminContext);
   const [show, setShow] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showEditAdminModal, setShowEditAdminModal] = useState(false);
   const [showAdminModal, setShowAdminModal] = useState(false);
-
   const [newProduct, setNewProduct] = useState({
     model: "",
     brand: "",
@@ -22,6 +22,7 @@ const AdminPanel = () => {
     price: 0,
   });
   const [currentProduct, setCurrentProduct] = useState(null);
+  const [currentAdmin, setCurrentAdmin] = useState(null);
   
 
   const [newAdmin, setNewAdmin] = useState({
@@ -36,6 +37,7 @@ const AdminPanel = () => {
   const handleShow = () => setShow(true);
 
   const handleEditModalClose = () => setShowEditModal(false);
+  const handleEditAdminModalClose = () => setShowEditAdminModal(false);
   const handleAdminModalClose = () => setShowAdminModal(false);
   const handleAdminModalShow = () => setShowAdminModal(true);
 
@@ -75,20 +77,37 @@ const AdminPanel = () => {
     setCurrentProduct(product);
     setShowEditModal(true);
   };
+  const handleEditAdmin = (admin) => {
+    setCurrentAdmin(admin);
+    setShowEditAdminModal(true);
+  };
 
   const handleSaveEditProduct = () => {
     updateProduct(currentProduct);
     setShowEditModal(false);
   };
+  const handleSaveEditAdmin = () => {
+    updateAdmin(currentAdmin);
+    setShowEditAdminModal(false);
+  };
+
 
   const handleRemoveProduct = (productId) => {
     removeProduct(productId);
     console.log(products);
   };
+  const handleRemoveAdmin = (adminId) => {
+    removeAdmin(adminId);
+    console.log(admins);
+  };
 
   const handleEditChange = (event) => {
     const { name, value } = event.target;
     setCurrentProduct({ ...currentProduct, [name]: value });
+  };
+  const handleEditAdminChange = (event) => {
+    const { name, value } = event.target;
+    setCurrentAdmin({ ...currentAdmin, [name]: value });
   };
 
 
@@ -137,6 +156,45 @@ const AdminPanel = () => {
 
         </Modal.Footer>
       </Modal>
+      <Modal className='editAdminModal'
+        show={showEditAdminModal}
+        onHide={handleEditAdminModalClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header>
+          <Modal.Title><h2>Edit Admin Data</h2></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form>
+            Username :<br />
+            <input
+              type="text"
+              name="username"
+              value={currentAdmin?.username || ""}
+              onChange={handleEditAdminChange} /><br />
+            Password : <br />
+            <input
+              type="text"
+              name="password"
+              value={currentAdmin?.password || ""}
+              onChange={handleEditAdminChange} /><br />
+            
+          </form>
+        </Modal.Body>
+        <Modal.Footer className='mt-40'>
+          <Button className='mr-20 btn-green ' variant="secondary" onClick={handleSaveEditAdmin}>
+            Save
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+
+
+      
+
+
+
 
       <Modal className='addNewCameraModal'
         show={show}
@@ -246,7 +304,44 @@ const AdminPanel = () => {
           <Button className='addNewAdminBtn' onClick={handleAdminModalShow}>Add a New Admin</Button>
           
 
+            </Row>
+            <Row className='adminPanel-newAdminAddTable'>
+
+
+          <Table className='striped bordered hover w-100'>
+            <thead className='tableHead'>
+              <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+
+
+            <tbody>
+              {admins.map(admin => (
+                <tr key={admin.id}>
+                  <td>{admin.username}</td>
+                  <td>{admin.password}</td>
+                  <td className='buttons f-dir-row'>
+                    <button className='btn-yellow' onClick={() => handleEditAdmin(admin)}>Edit</button>
+                    <button className='btn-red' onClick={() => handleRemoveAdmin(admin.id)}>Remove</button>
+
+                  </td>
+                </tr>
+
+
+
+
+              )
+
+              )}
+            </tbody>
+          </Table>
+
         </Row>
+            
       </Tab>
       <Tab eventKey="products" title="Products">
       <Row className='f-dir-row w-100'>
