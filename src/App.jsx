@@ -7,7 +7,7 @@ import UserLogin from './components/UserLogin';
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import HomePage from './components/HomePage';
 import AdminPanel from './components/AdminPanel';
-import { ProductContext } from './components/ProductContext';
+import { ProductProvider } from './components/ProductContext';
 
 
 
@@ -15,7 +15,7 @@ import { ProductContext } from './components/ProductContext';
 
 const App = () => {
   
-  const navigations = useNavigate();
+
 
   return (
 
@@ -35,7 +35,7 @@ const App = () => {
 
       <Routes>
         {/* <Route path='/' element={<App/>}/> */}
-        <Route path='/' element={<Login />} />
+        <Route path='/' element={<Login/>} />
         <Route path='/HomePage' element={<HomePage />} />
         <Route path='/AdminLogin' element={<AdminLogin />} />
         <Route path='/UserLogin' element={<UserLogin />} />
@@ -43,7 +43,14 @@ const App = () => {
       </Routes>
 
 
+      
+  
+      <ProductProvider>
+        <AdminPanel/>
+   </ProductProvider>
+  
     </>
+    
     
 
   )

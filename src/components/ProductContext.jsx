@@ -1,43 +1,24 @@
-import { Children, createContext, useState } from "react";
-import AdminPanel from "./AdminPanel";
+import React, { createContext, useState } from "react";
 
-const ProductContext = createContext({
-    products: [{
-        id: Date.now(),
-        model: "eos",
-        brand: "canon",
-        category: "Photos",
-        price: 0,
-        
-    }],
-    
-    addProduct: () => { },
-    updateProduct: () => {},
-    deleteProduct: () => {},
 
-        
-});
+const ProductContext = createContext();
 
 const ProductProvider = ({ Children }) => {
     const [products, setProducts] = useState([]);
-    const addProduct = (newProduct) => {
-        
-        setProducts((prevProducts) => [...prevProducts, newProduct]);
+    const addProduct = (product) => {
+        setProducts([...products, product]);
     };
     const updateProduct = (updatedProduct) => {
-        setProducts((prevProducts) =>
-          prevProducts.map((product) =>
+        setProducts(products.map(product =>
             product.id === updatedProduct.id ? updatedProduct : product
-          )
-        );
+        ));
     };
-    const deleteProduct = (productId) => {
-        setProducts((prevProducts) =>
-          prevProducts.filter((product) => product.id !== productId)
-        );
-      };
+
+    const removeProduct = (productId) => {
+        setProducts(products.filter(product => product.id !== productId));
+    };
     return (
-        <ProductContext.Provider value={{ products,addProduct,updateProduct ,deleteProduct}}>
+        <ProductContext.Provider value={{ products, addProduct, updateProduct, removeProduct }}>
             {Children}
         </ProductContext.Provider>
     );
