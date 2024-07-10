@@ -23,11 +23,11 @@ const App = () => {
     <>
       
       
-       <Navbar expand="lg" className="bg-body-tertiary">
+       <Navbar expand="lg" className="mainNavbar bg-body-tertiary">
         <Container className="header">
-          <Navbar.Brand href="/HomePage">Cam4You</Navbar.Brand>
+          <Navbar.Brand href="/HomePage"><h2>Cam4You</h2></Navbar.Brand>
           <Nav className='links'>
-            <Nav.Link href="/">Log in / Sign Up</Nav.Link>
+            <Nav.Link href="/"><h4>Log in / Sign Up</h4></Nav.Link>
           </Nav>
         </Container>
       </Navbar>

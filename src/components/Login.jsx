@@ -10,7 +10,7 @@ const Login = () => {
     
   const userLoginClicked = ()=>navigate('/UserLogin')
   return (
-    <div className='loginContent ta-center w-100 h-100'>
+    <div className='loginContent ta-center'>
         <h2>Choose your profile type : </h2>
         <div className=' loginButtons f-dir-col'>
           <button className='userLogin hCentered mt-10' onClick={userLoginClicked}>Login as a User</button>

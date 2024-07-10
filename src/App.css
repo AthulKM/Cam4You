@@ -4,9 +4,17 @@ body {
 }
 
 #root {
-  width: 100%;
-  height: 100%;
+  position: relative;
+  
 }
+.rootBody {
+  
+  min-height: 500px;
+  position: relative;
+}
+
+
+
 .btn-addNewProduct {
   margin: 0 0 0 auto;
   background: green;
@@ -14,13 +22,30 @@ body {
   border-radius: 10px;
 
 }
+
+.btn-addNewProduct, .addNewAdminBtn {
+  width: 35% !important;
+  margin: 15px auto;
+  font-size: 25px !important;
+
+}
 .adminPanelContainer {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(206, 193, 193, 0.7);
   
+  position: absolute;
+  top: 250px;
+  left:60px;
   padding: 20px;
+  border-radius: 20px;
 
 
 }
+.adminPanelContainer .nav-tabs .nav-item button.nav-link  {
+  color: maroon;
+  font-weight: 800;
+  font-size: 25px;
+}
+
 .adminPanel-newProductAddTable {
   color: rgba(165, 42, 42, 0.049);
   border: 2px solid white;
@@ -142,7 +167,7 @@ body {
   width: 100%;
   top: 50px;
   left: 0;
-  
+  height: 100px;
 }
 
 .navbar .header {
@@ -150,7 +175,8 @@ body {
   display: flex;
   flex-direction: row;
   vertical-align: middle;
-  
+  background: green !important;
+  background-color: green;
   justify-content: space-between;
   
 }
@@ -163,26 +189,32 @@ body {
   font-size: 50px;
   padding: 20px 15px;
   border-radius: 8px;
+  
 
+}
+.navbar h2 {
+  color: beige;
 }
 
 .navbar .header .links {
   
   text-align: center;
-  margin: auto 50px auto 0;
-  padding: 10px;
-  border: 2px solid antiquewhite;
+  margin: auto 50px 10px 0;
+  vertical-align: middle;
+  border: 2px solid rgb(202, 179, 150);
   border-radius: 10px;
-  height: 30px;
-  width: 180px;
+  height: 40px;
+  width: 200px;
+  vertical-align: middle;
 
   
 }
-.navbar .header .links a{
-  vertical-align: middle;
-  color: antiquewhite;
 
+.navbar .header .links h4 {
+  color: beige;
+  margin:0 auto;
 }
+
 table.bordered {
   border: 1px solid white;
 
@@ -190,6 +222,11 @@ table.bordered {
 
 /* Login Page */
 .loginContent {
+  /* position: absolute;
+  top:350px;
+  left: 200px; */
+  margin: 250px auto;
+
   background-color: rgba(0,0,0,0.3);
   
   
@@ -197,6 +234,7 @@ table.bordered {
 .loginContent h2 {
   font-size: 40px;
   padding: 10px;
+  color: antiquewhite;
 }
 .loginContent .loginButtons {
   padding: 10px;

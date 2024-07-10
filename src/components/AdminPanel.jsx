@@ -1,11 +1,16 @@
 import React, { useContext, useState } from 'react'
 import { Container, Row, Button, Modal } from 'react-bootstrap';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+
 import Table from 'react-bootstrap/Table';
 import { ProductContext } from './ProductContext';
+import { AdminContext } from './AdminContext';
 
 
 const AdminPanel = () => {
   const { products, addProduct, updateProduct, removeProduct } = useContext(ProductContext);
+  const { admins, addAdmin, updateAdmin, removeAdmin } = useContext(AdminContext);
   const [show, setShow] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showAdminModal, setShowAdminModal] = useState(false);
@@ -17,12 +22,12 @@ const AdminPanel = () => {
     price: 0,
   });
   const [currentProduct, setCurrentProduct] = useState(null);
-  const [admins, setAdmins] = useState([{
+  
+
+  const [newAdmin, setNewAdmin] = useState({
     username: "",
     password: "",
-  }]);
-
-  const [newAdmin, setNewAdmin] = useState(admins);
+  });
 
 
 
@@ -57,13 +62,14 @@ const AdminPanel = () => {
     
   };
   const handleSaveAdmin = () => {
-    setAdmins([...admins, newAdmin]);
+    addAdmin({ id: Date.now(), ...newAdmin });
     setShowAdminModal(false);
     setNewAdmin({
       username: "",
       password: "",
     });
   };
+
 
   const handleEditProduct = (product) => {
     setCurrentProduct(product);
@@ -229,12 +235,26 @@ const AdminPanel = () => {
 
 
       <Container className='w-80 hCentered adminPanelContainer'>
-        <Row className='f-dir-row w-100'>
+      <Tabs
+      defaultActiveKey="admins"
+      id="fill-tab-example"
+      className="mb-3"
+      fill
+    >
+      <Tab eventKey="admins" title="Admins">
+      <Row className='f-dir-row w-100'>
           <Button className='addNewAdminBtn' onClick={handleAdminModalShow}>Add a New Admin</Button>
-          <Button className='btn-addNewProduct' onClick={handleShow}>Add a New Camera</Button>
+          
 
         </Row>
-        <Row className='adminPanel-newProductAddTable'>
+      </Tab>
+      <Tab eventKey="products" title="Products">
+      <Row className='f-dir-row w-100'>
+          
+          <Button className='btn-addNewProduct' onClick={handleShow}>Add a New Camera</Button>
+
+            </Row>
+            <Row className='adminPanel-newProductAddTable'>
 
 
           <Table className='striped bordered hover w-100'>
@@ -276,6 +296,18 @@ const AdminPanel = () => {
           </Table>
 
         </Row>
+      </Tab>
+      
+    </Tabs>
+
+
+
+
+
+
+
+       
+        
 
       </Container>
 
