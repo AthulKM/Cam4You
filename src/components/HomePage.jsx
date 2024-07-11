@@ -13,8 +13,8 @@ const HomePage = () => {
         {products.map(product => (
           <li key={product.id}>
             <Row>
-              <Col>
-                <img  src={product.image} alt={ product.model} />
+              <Col className='imageCard'>
+                <Image  src={product.image} alt={ product.model}  width="150px" height="150px" rounded/>
               </Col>
               <Col>
                 <Row>{product.model}</Row>

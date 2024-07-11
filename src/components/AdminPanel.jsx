@@ -8,7 +8,10 @@ import { ProductContext } from './ProductContext';
 import { AdminContext } from './AdminContext';
 
 
+
 const AdminPanel = () => {
+  
+
   const { products, addProduct, updateProduct, removeProduct } = useContext(ProductContext);
   const { admins, addAdmin, updateAdmin, removeAdmin } = useContext(AdminContext);
   const [show, setShow] = useState(false);
@@ -120,7 +123,7 @@ const AdminPanel = () => {
 
 
 
-    <div>
+    <div className='adminPanelBody'>
 
       <Modal className='addNewAdminModal'
         show={showAdminModal}
@@ -288,7 +291,7 @@ const AdminPanel = () => {
               name="price"
               value={currentProduct?.price || 0}
               onChange={handleEditChange} /><br />
-            Url : <br />
+            Image : <br />
             <input
               type="text"
               name="image"

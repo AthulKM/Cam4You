@@ -1,6 +1,8 @@
 import React, { createContext, useState,useEffect } from 'react';
+// import { ProductDetails } from './components/ProductsDetails';
 
 export const ProductContext = createContext();
+// const [productDetails, setProductDetails] = useState(ProductDetails);
 
 export const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState(() => { 
@@ -31,7 +33,7 @@ export const ProductProvider = ({ children }) => {
   };
 
   return (
-    <ProductContext.Provider value={{ products, addProduct, updateProduct, removeProduct }}>
+    <ProductContext.Provider value={{ products, addProduct, updateProduct, removeProduct}}>
       {children}
     </ProductContext.Provider>
   );

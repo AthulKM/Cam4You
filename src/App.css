@@ -1,18 +1,49 @@
 body {
   background: url('./images/camera_main_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  height:100vh;
+  
+
   
 }
+
 
 #root {
   position: relative;
   
 }
-.rootBody {
-  
-  min-height: 500px;
+/* .rootBody {
   position: relative;
+  background: url('./images/camera_main_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vh;
+  min-height:100vh;
+} */
+nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light {
+  position: sticky;
+  background: rgba(0,0,0,0.3 ) !important;
+  height: 100px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px 20px;
 }
-
+nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header {
+  background: rgba(39, 135, 10, 0.768) !important;
+  height: 100%;
+}
+a.navbar-brand {
+  border: none !important;
+}
+.navbar h2 {
+  color: beige;
+  font-size: 50px;
+  font-weight: 900;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  border-radius: 15px;
+}
 
 
 .btn-addNewProduct {
@@ -29,12 +60,15 @@ body {
   font-size: 25px !important;
 
 }
+.adminPanelBody {
+  margin: 250px auto 0 auto;
+}
 .adminPanelContainer {
   background-color: rgba(206, 193, 193, 0.7);
   
-  position: absolute;
-  top: 250px;
-  left:60px;
+  
+  
+  margin: 500px auto 0 auto;
   padding: 20px;
   border-radius: 20px;
 
@@ -226,7 +260,7 @@ table.bordered {
   top:350px;
   left: 200px; */
   margin: 250px auto;
-
+  width: 60%;
   background-color: rgba(0,0,0,0.3);
   
   
@@ -235,6 +269,8 @@ table.bordered {
   font-size: 40px;
   padding: 10px;
   color: antiquewhite;
+  width: 60%;
+  margin: 0 auto;
 }
 .loginContent .loginButtons {
   padding: 10px;
@@ -263,9 +299,13 @@ section.mainSection .container .searchArea {
 }
 .homePageContent h1 {
   color: beige;
+  background: rgba(0,0,0,0.5 );
+  width: 30%;
+  text-align: center;
 
 }
 .homePageContent li {
+  margin: 10px 0;
   color: yellowgreen;
   font-size: 30px;
   background: rgba(0,0,0,0.3 );
@@ -273,10 +313,40 @@ section.mainSection .container .searchArea {
 .homePageContent ul {
   background: rgba(0,0,0,0.6);
 }
-.homePageContent li img {
+
+.homePageContent li row col img {
   
   border: 2px dotted white;
+  width: 100px !important;
+  height: 100px !important;
+  
+  margin: 0 auto;
 }
-.homePageContent row col {
-  justify-content: center;
+.homePageContent .imageCard {
+  
+  text-align: center;
+  padding: 20px 0;
+  
+}
+
+
+/* Admin Login */
+
+.adminLoginBody {
+  margin: 250px auto 0 auto;
+  text-align: center;
+}
+
+.adminLoginBody h2, .adminLoginBody form {
+  color: beige;
+  background: rgba(0,0,0,0.5 );
+  width: 30%;
+  margin: 0 auto;
+  padding: 20px;
+
+}
+.adminLoginBody form input {
+  margin: 5px 0 5px 5px;
+  background: white;
+  color: brown;
 }
