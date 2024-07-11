@@ -250,3 +250,33 @@ section.mainSection .container .searchArea {
   display: flex;
   grid-gap: 30px;
 }
+
+
+
+
+/* HomePage */
+
+.homePageContent {
+  
+  margin: 200px auto 0 auto;
+
+}
+.homePageContent h1 {
+  color: beige;
+
+}
+.homePageContent li {
+  color: yellowgreen;
+  font-size: 30px;
+  background: rgba(0,0,0,0.3 );
+}
+.homePageContent ul {
+  background: rgba(0,0,0,0.6);
+}
+.homePageContent li img {
+  
+  border: 2px dotted white;
+}
+.homePageContent row col {
+  justify-content: center;
+}

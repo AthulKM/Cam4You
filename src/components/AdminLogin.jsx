@@ -1,42 +1,42 @@
-import React, { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react'
+import { AuthContext } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
-    const [adminData, setAdminData] = useState([
-        {
-            Name: 'Athul',
-            Password: '1234',
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const { login } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const isLoggedIn = login(username, password);
+        if (isLoggedIn) {
+            navigate('/AdminPanel');
+        } else {
+            setError('Invalid username or password');
         }
-    ]);
-    const [adminName, setAdminName] = useState('');
-    const [adminPass, setAdminPass] = useState('');
-    const navAdminLogin = useNavigate();
-    
-    function adminPassCheck() {
-        console.log("Password is entered");
-    }
-    function navToAdminPanel() {
-        alert("Redirecting without validating authentication");
-        navAdminLogin('/AdminPanel');
+    };
 
-        
-    }
-    
     return (
-      
-      <div>
-            <form className='f-dir-col admin-login-form'>
-                <h3>No need to add any inputs, authentication is not enabled yet. Click on login to see the next page.</h3>
-                <input type="text"
-                    value={adminName} onChange={(e)=>setAdminName(e.target.value)} placeholder='AdminName' />
-                <input type='password' value={adminPass}
-                    onChange={ (e)=>setAdminPass(e.target.value)} placeholder='Password' />
-                <button onClick={navToAdminPanel}>Login</button>
-          </form>
-          
+        <div>
+            <h2>Admin Login</h2>
+            <form onSubmit={handleLogin}>
+                <div>
+                    <label>Username:</label>
+                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                </div>
+                <button type="submit">Login</button>
+                {error && <p>{error}</p>}
+            </form>
+        </div>
+    );
 
-    </div>
-  )
-}
+};
 
 export default AdminLogin

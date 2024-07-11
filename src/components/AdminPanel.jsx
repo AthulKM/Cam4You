@@ -20,6 +20,7 @@ const AdminPanel = () => {
     brand: "",
     category: "",
     price: 0,
+    image:"",
   });
   const [currentProduct, setCurrentProduct] = useState(null);
   const [currentAdmin, setCurrentAdmin] = useState(null);
@@ -60,6 +61,7 @@ const AdminPanel = () => {
       brand: "",
       category: "",
       price: 0,
+      image:"",
     });
     
   };
@@ -226,12 +228,19 @@ const AdminPanel = () => {
               name="category"
               value={newProduct.category}
               onChange={changeHandler} /><br />
+            Image : <br />
+            <input
+              type="text"
+              name="image"
+              value={newProduct.image}
+              onChange={changeHandler}/><br/>
             Price : <br />
             <input
               type="number"
               name="price"
               value={newProduct.price}
               onChange={changeHandler} /><br />
+            
 
 
           </form>
@@ -278,6 +287,12 @@ const AdminPanel = () => {
               type="number"
               name="price"
               value={currentProduct?.price || 0}
+              onChange={handleEditChange} /><br />
+            Url : <br />
+            <input
+              type="text"
+              name="image"
+              value={currentProduct?.image || ""}
               onChange={handleEditChange} /><br />
           </form>
         </Modal.Body>
@@ -358,7 +373,8 @@ const AdminPanel = () => {
                 <th>Product_ID</th>
                 <th>Model</th>
                 <th>Brand</th>
-                <th>Category</th>
+                    <th>Category</th>
+                    <th>Image</th>
                 <th>Price in <span>&#x20B9;</span></th>
                 <th>Actions</th>
               </tr>
@@ -373,6 +389,7 @@ const AdminPanel = () => {
                   <td>{product.model}</td>
                   <td>{product.brand}</td>
                   <td>{product.category}</td>
+                  <td>{ product.image}</td>
                   <td>{product.price}</td>
                   <td className='buttons f-dir-row'>
                     <button className='btn-yellow' onClick={() => handleEditProduct(product)}>Edit</button>
