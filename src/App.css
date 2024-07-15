@@ -1,7 +1,7 @@
 body {
   background: url('./images/camera_main_bg.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   
   height:100vh;
   
@@ -24,7 +24,7 @@ body {
 nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light {
   position: sticky;
   background: rgba(0,0,0,0.3 ) !important;
-  height: 100px;
+  height: 150px;
   width: 80%;
   margin: 0 auto;
   padding: 5px 20px;
@@ -45,6 +45,10 @@ a.navbar-brand {
   border-radius: 15px;
 }
 
+
+.navbar .switch {
+  color: beige;
+}
 
 .btn-addNewProduct {
   margin: 0 0 0 auto;
@@ -97,27 +101,27 @@ a.navbar-brand {
   font-weight: 700;
 }
 .addNewCameraModal {
-  border: 3px solid white;
+  
   padding: 10px;
   position: absolute;
   
   top:50px;
   left:400px;
-  background:yellowgreen;
-  border-radius: 10px;
+  background:rgba(154, 205, 50,0.3);
+  
   height: 500px;
   color: brown;
   width: 300px;
 }
 .addNewAdminModal {
-  border: 3px solid white;
+  
   padding: 10px;
   position: absolute;
   
   top:50px;
   left:400px;
-  background:yellowgreen;
-  border-radius: 10px;
+  background:rgba(154, 205, 50,0.3);
+  
   height: 500px;
   color: brown;
   width: 300px;
@@ -235,18 +239,22 @@ body {
   text-align: center;
   margin: auto 50px 10px 0;
   vertical-align: middle;
-  border: 2px solid rgb(202, 179, 150);
+  
   border-radius: 10px;
-  height: 40px;
+  height: 100%;
   width: 200px;
   vertical-align: middle;
 
   
 }
 
+
 .navbar .header .links h4 {
   color: beige;
   margin:0 auto;
+}
+.navbar .header .links a {
+  margin: auto 0;
 }
 
 table.bordered {
@@ -349,4 +357,47 @@ section.mainSection .container .searchArea {
   margin: 5px 0 5px 5px;
   background: white;
   color: brown;
+}
+
+
+/* UserLogin Component */
+
+
+
+.d-flex.justify-content-center.align-items-center.vh-100.user-login-container.container {
+  margin: 250px auto;
+  height: 250px !important;
+  width: 40% !important;
+  background-color: #ffffff; 
+  
+  margin: 250px auto auto auto;
+  padding: 20px;
+  border-radius: 35px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.user-login-box {
+  width: 300px;
+}
+
+.login-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333; /* Dark color for text */
+}
+
+.login-button {
+  width: 100%;
+  font-size: 16px;
+}
+
+/* Shopping Cart */
+
+.shoppingCartContent.container h1 {
+  color: beige;
+  margin-top: 150px;
+}
+.shoppingCartContent.container div.row {
+  background: beige;
 }

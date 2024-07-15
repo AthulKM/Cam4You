@@ -1,9 +1,15 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 export const AdminContext = createContext();
+localStorage.setItem('admins', JSON.stringify([{
+    username: 'athul',
+    password:'athul'
+}]))
 
 export const AdminProvider = ({ children }) => {
+    
     const [admins, setAdmins] = useState(() => {
+        
         const savedAdmins = localStorage.getItem('admins');
         return savedAdmins ? JSON.parse(savedAdmins) : [];
     });

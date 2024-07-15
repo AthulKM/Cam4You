@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
   }, [user]);
 
   const login = (username, password) => {
-    // Check against stored admin data
+    
     const storedAdmins = JSON.parse(localStorage.getItem('admins')) || [];
     const admin = storedAdmins.find(admin => admin.username === username && admin.password === password);
     

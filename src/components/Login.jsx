@@ -13,8 +13,8 @@ const Login = () => {
     <div className='loginContent ta-center'>
         <h2>Choose your profile type : </h2>
         <div className=' loginButtons f-dir-col'>
-          <button className='userLogin hCentered mt-10' onClick={userLoginClicked}>Login as a User</button>
-          <button className='adminLogin hCentered mt-10' onClick={adminLoginClicked}> Login as an admin</button>
+          <button className='userLogin hCentered mt-10' onClick={userLoginClicked}>I'm a User</button>
+          <button className='adminLogin hCentered mt-10' onClick={adminLoginClicked}> I'm an admin</button>
         </div>
       </div>
   )
