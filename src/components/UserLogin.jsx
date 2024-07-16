@@ -5,9 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
 const UserLogin = () => {
-  const { addUser, loginUser } = useContext(UserContext);
+  const { addUser, loginUser} = useContext(UserContext);
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -44,6 +45,7 @@ const UserLogin = () => {
   };
 
   const handleLogin = () => {
+    
     try {
       loginUser(loginDetails.username, loginDetails.password);
       setShowLogin(false);
@@ -52,6 +54,7 @@ const UserLogin = () => {
         password: '',
       });
       setError(null);
+      
       navigate('/HomePage'); 
     } catch (error) {
       setError(error.message);

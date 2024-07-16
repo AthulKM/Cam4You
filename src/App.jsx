@@ -13,7 +13,7 @@ import { ShoppingCartProvider } from './components/ShoppingCartContext';
 import ShoppingCart from './components/ShoppingCart';
 
 const App = () => {
-  const { currentUser, logoutUser } = useContext(UserContext);
+  const { currentUser, logoutUser} = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -22,7 +22,7 @@ const App = () => {
   };
 
   const handleLoginSwitch = () => {
-    navigate('/'); // navigate to the Login component
+    navigate('/'); 
   };
 
   return (
@@ -35,7 +35,8 @@ const App = () => {
                 <Navbar.Brand href="/HomePage"><h2>Cam4You</h2></Navbar.Brand>
                 <Nav className='links'>
                   {currentUser ? (
-                    <Button variant="outline-danger" onClick={handleLogout}>Logout</Button>
+                    
+                    <Button onClick={handleLogout}>Logout</Button>
                   ) : (
                     <>
                       <Button className='switch' variant="outline-primary" onClick={handleLoginSwitch}>Switch Profile</Button>
@@ -47,6 +48,7 @@ const App = () => {
             </Navbar>
 
             <Routes>
+              <Route path='/App' element={ <App/>}/>
               <Route path='/' element={<Login />} />
               <Route path='/HomePage' element={<HomePage />} />
               <Route path='/AdminLogin' element={<AdminLogin />} />

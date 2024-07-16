@@ -7,7 +7,7 @@ export const UserProvider = ({ children }) => {
     const savedUsers = localStorage.getItem('users');
     return savedUsers ? JSON.parse(savedUsers) : [];
   });
-
+  
   const [currentUser, setCurrentUser] = useState(() => {
     const savedUser = localStorage.getItem('currentUser');
     return savedUser ? JSON.parse(savedUser) : null;
@@ -21,6 +21,8 @@ export const UserProvider = ({ children }) => {
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
   }, [currentUser]);
 
+  
+
   const addUser = (user) => {
     setUsers([...users, user]);
   };
@@ -33,6 +35,7 @@ export const UserProvider = ({ children }) => {
     const user = users.find(u => u.username === username && u.password === password);
     if (user) {
       setCurrentUser(user);
+      
     } else {
       throw new Error('Invalid credentials');
     }
@@ -43,7 +46,7 @@ export const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{ users, currentUser, addUser, removeUser, loginUser, logoutUser }}>
+    <UserContext.Provider value={{ users, currentUser, addUser, removeUser, loginUser, logoutUser}}>
       {children}
     </UserContext.Provider>
   );

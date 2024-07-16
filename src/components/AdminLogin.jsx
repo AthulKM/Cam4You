@@ -14,6 +14,7 @@ const AdminLogin = () => {
         e.preventDefault();
         const isLoggedIn = login(username, password);
         if (isLoggedIn) {
+            
             navigate('/AdminPanel');
         } else {
             setError('Invalid username or password');
@@ -32,7 +33,11 @@ const AdminLogin = () => {
                     <label>Password:</label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit">
+                    
+                        Login
+                    
+                </button>
                 {error && <p>{error}</p>}
             </form>
         </div>

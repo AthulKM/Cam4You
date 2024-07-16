@@ -13,8 +13,9 @@ import { ShoppingCartProvider } from './components/ShoppingCartContext';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
+    <UserProvider>
       <ShoppingCartProvider>
-        <UserProvider>
+        
           <AuthProvider>
             <ProductProvider>
               <AdminProvider>
@@ -22,8 +23,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               </AdminProvider>
             </ProductProvider>
           </AuthProvider>
+        
+        </ShoppingCartProvider>
         </UserProvider>
-      </ShoppingCartProvider>
       
       
     </BrowserRouter>

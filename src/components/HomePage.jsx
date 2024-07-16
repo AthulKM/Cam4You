@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
-import { Container, Row, Col, Button, Image } from 'react-bootstrap';
+import { Container, Row, Col, Button, Image, Navbar, Nav } from 'react-bootstrap';
 import { ProductContext } from './ProductContext';
 import { useShoppingCart } from './ShoppingCartContext';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from './UserContext';
+
 
 const HomePage = () => {
   const { products } = useContext(ProductContext);
+  const { currentUser} = useContext(UserContext);
   const { addToCart } = useShoppingCart();
   const navigate = useNavigate(); 
 
@@ -14,8 +17,22 @@ const HomePage = () => {
     navigate('/cart');
   };
 
+  
+
+  const handleLogout = () => {
+    logoutUser();
+    navigate('/UserLogin');
+  };
+
+  const handleLoginSwitch = () => {
+    navigate('/'); 
+  };
+
+
+
   return (
     <Container className='homePageContent'>
+      
       <h1>Products</h1>
       <ul>
         {products.map(product => (
