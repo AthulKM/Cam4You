@@ -9,7 +9,7 @@ import { UserContext } from './UserContext';
 
 const HomePage = () => {
   const { products } = useContext(ProductContext);
-  const { currentUser} = useContext(UserContext);
+  
   const { addToCart } = useShoppingCart();
   const navigate = useNavigate(); 
 
@@ -19,14 +19,6 @@ const HomePage = () => {
 
   
 
-  const handleLogout = () => {
-    logoutUser();
-    navigate('/UserLogin');
-  };
-
-  const handleLoginSwitch = () => {
-    navigate('/'); 
-  };
 
 
 

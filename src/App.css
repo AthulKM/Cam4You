@@ -31,6 +31,7 @@ nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light {
 }
 nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header {
   background: rgba(39, 135, 10, 0.768) !important;
+  border-radius: 30px;
   height: 100%;
 }
 a.navbar-brand {

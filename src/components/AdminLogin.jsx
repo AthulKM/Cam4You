@@ -34,9 +34,7 @@ const AdminLogin = () => {
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <button type="submit">
-                    
-                        Login
-                    
+                    Login
                 </button>
                 {error && <p>{error}</p>}
             </form>

@@ -119,12 +119,9 @@ const AdminPanel = () => {
 
   return (
 
-
-
-
-
     <div className='adminPanelBody'>
 
+{/* Modal to add Admins */}
       <Modal className='addNewAdminModal'
         show={showAdminModal}
         onHide={handleAdminModalClose}
@@ -149,18 +146,16 @@ const AdminPanel = () => {
               name="password"
               value={newAdmin.password}
               onChange={changeAdminHandler} /><br />
-
-
-
           </form>
         </Modal.Body>
         <Modal.Footer className='mt-40'>
           <Button className='mr-20 btn-green ' variant="secondary" onClick={handleSaveAdmin}>
             Save
           </Button>
-
         </Modal.Footer>
       </Modal>
+
+{/* Modal to Edit Admin table */}
       <Modal className='editAdminModal'
         show={showEditAdminModal}
         onHide={handleEditAdminModalClose}
@@ -195,12 +190,7 @@ const AdminPanel = () => {
       </Modal>
 
 
-
-      
-
-
-
-
+{/* Modal To Add A New Camera */}
       <Modal className='addNewCameraModal'
         show={show}
         onHide={handleClose}
@@ -243,9 +233,6 @@ const AdminPanel = () => {
               name="price"
               value={newProduct.price}
               onChange={changeHandler} /><br />
-            
-
-
           </form>
         </Modal.Body>
         <Modal.Footer className='mt-40'>
@@ -256,6 +243,7 @@ const AdminPanel = () => {
         </Modal.Footer>
       </Modal>
 
+{/* Product details Editting Modal */}
       <Modal className='editCameraModal'
         show={showEditModal}
         onHide={handleEditModalClose}
@@ -306,26 +294,23 @@ const AdminPanel = () => {
         </Modal.Footer>
       </Modal>
 
-
-
-
-
-      <Container className='w-80 hCentered adminPanelContainer'>
-      <Tabs
-      defaultActiveKey="admins"
-      id="fill-tab-example"
-      className="mb-3"
-      fill
+{/* Container for the Tabs and Tab Bodies */}
+  <Container className='w-80 hCentered adminPanelContainer'>
+    <Tabs
+    defaultActiveKey="admins"
+    id="fill-tab-example"
+    className="mb-3"
+    fill
     >
+    {/* Admins Tab */}
       <Tab eventKey="admins" title="Admins">
-      <Row className='f-dir-row w-100'>
-          <Button className='addNewAdminBtn' onClick={handleAdminModalShow}>Add a New Admin</Button>
-          
-
-            </Row>
-            <Row className='adminPanel-newAdminAddTable'>
-
-
+        <Row className='f-dir-row w-100'>
+          <Button className='addNewAdminBtn'
+            onClick={handleAdminModalShow}>
+            Add a New Admin
+          </Button>
+        </Row>
+        <Row className='adminPanel-newAdminAddTable'>
           <Table className='striped bordered hover w-100'>
             <thead className='tableHead'>
               <tr>
@@ -334,10 +319,7 @@ const AdminPanel = () => {
                 <th>Actions</th>
               </tr>
             </thead>
-
-
-
-            <tbody>
+              <tbody>
               {admins.map(admin => (
                 <tr key={admin.id}>
                   <td>{admin.username}</td>
@@ -348,85 +330,61 @@ const AdminPanel = () => {
 
                   </td>
                 </tr>
-
-
-
-
-              )
-
+                )
               )}
-            </tbody>
+              </tbody>
           </Table>
-
         </Row>
-            
       </Tab>
+
+    {/*Products Tab  */}
       <Tab eventKey="products" title="Products">
-      <Row className='f-dir-row w-100'>
-          
-          <Button className='btn-addNewProduct' onClick={handleShow}>Add a New Camera</Button>
-
-            </Row>
-            <Row className='adminPanel-newProductAddTable'>
-
-
+        <Row className='f-dir-row w-100'>
+          <Button className='btn-addNewProduct'
+                  onClick={handleShow}>
+                  Add a New Camera
+          </Button>
+        </Row>
+        <Row className='adminPanel-newProductAddTable'>
           <Table className='striped bordered hover w-100'>
             <thead className='tableHead'>
               <tr>
                 <th>Product_ID</th>
                 <th>Model</th>
                 <th>Brand</th>
-                    <th>Category</th>
-                    <th>Image</th>
+                <th>Category</th>
+                <th>Image</th>
                 <th>Price in <span>&#x20B9;</span></th>
                 <th>Actions</th>
               </tr>
             </thead>
-
-
-
             <tbody>
-              {products.map(product => (
-                <tr key={product.id}>
-                  <td>{product.id}</td>
-                  <td>{product.model}</td>
-                  <td>{product.brand}</td>
-                  <td>{product.category}</td>
-                  <td>{ product.image}</td>
-                  <td>{product.price}</td>
-                  <td className='buttons f-dir-row'>
-                    <button className='btn-yellow' onClick={() => handleEditProduct(product)}>Edit</button>
-                    <button className='btn-red' onClick={() => handleRemoveProduct(product.id)}>Remove</button>
-
-                  </td>
-                </tr>
-
-
-
-
-              )
-
-              )}
-            </tbody>
-          </Table>
-
-        </Row>
-      </Tab>
+                {products.map(product => (
+                  <tr key={product.id}>
+                    <td>{product.id}</td>
+                    <td>{product.model}</td>
+                    <td>{product.brand}</td>
+                    <td>{product.category}</td>
+                    <td>{ product.image}</td>
+                    <td>{product.price}</td>
+                    <td className='buttons f-dir-row'>
+                      <button className='btn-yellow'
+                        onClick={() => handleEditProduct(product)}>Edit
+                      </button>
+                      <button className='btn-red' onClick={() => handleRemoveProduct(product.id)}>Remove</button>
+                    </td>
+                  </tr>
+                  )
+                )}
+              </tbody>
+            </Table>
+          </Row>
+        </Tab>
       
-    </Tabs>
+      </Tabs>
+    </Container>
 
-
-
-
-
-
-
-       
-        
-
-      </Container>
-
-    </div>
+  </div>
 
   )
 }
