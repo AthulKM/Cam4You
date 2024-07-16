@@ -22,7 +22,7 @@ const AdminPanel = () => {
     model: "",
     brand: "",
     category: "",
-    price: 0,
+    price: null,
     image:"",
   });
   const [currentProduct, setCurrentProduct] = useState(null);
@@ -277,7 +277,7 @@ const AdminPanel = () => {
             <input
               type="number"
               name="price"
-              value={currentProduct?.price || 0}
+              value={currentProduct?.price || null}
               onChange={handleEditChange} /><br />
             Image : <br />
             <input
@@ -345,15 +345,15 @@ const AdminPanel = () => {
                   Add a New Camera
           </Button>
         </Row>
-        <Row className='adminPanel-newProductAddTable'>
+        <Row className='adminPanel-newProductAddTable w-100'>
           <Table className='striped bordered hover w-100'>
             <thead className='tableHead'>
               <tr>
-                <th>Product_ID</th>
+                <th className='id'>Product_ID</th>
                 <th>Model</th>
                 <th>Brand</th>
                 <th>Category</th>
-                <th>Image</th>
+                <th className='url'>Image</th>
                 <th>Price in <span>&#x20B9;</span></th>
                 <th>Actions</th>
               </tr>
@@ -361,11 +361,11 @@ const AdminPanel = () => {
             <tbody>
                 {products.map(product => (
                   <tr key={product.id}>
-                    <td>{product.id}</td>
+                    <td className='id'>{product.id}</td>
                     <td>{product.model}</td>
                     <td>{product.brand}</td>
                     <td>{product.category}</td>
-                    <td>{ product.image}</td>
+                    <td className='url'>{ product.image}</td>
                     <td>{product.price}</td>
                     <td className='buttons f-dir-row'>
                       <button className='btn-yellow'

@@ -1,35 +1,35 @@
-import React from 'react';
-import { Container, Row, Col, Button, Image } from 'react-bootstrap';
-import { useShoppingCart } from './ShoppingCartContext';
+import React, { useContext } from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { ShoppingCartContext } from './ShoppingCartContext';
 
 const ShoppingCart = () => {
-  const { cartItems, removeFromCart } = useShoppingCart();
+  const { cart, addToCart, removeFromCart, clearCart } = useContext(ShoppingCartContext);
 
   return (
-    <Container className='shoppingCartContent'>
-      <h1>Your Shopping Cart</h1>
-      {cartItems.length === 0 ? (
+    <Container className='cartContent'>
+     
+      {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <ul>
-          {cartItems.map(item => (
-            <li key={item.id}>
-              <Row>
-                <Col className='imageCard'>
-                  <Image src={item.image} alt={item.model} width="150px" height="150px" rounded />
-                </Col>
-                <Col>
-                  <Row>{item.model}</Row>
-                  <Row>{item.brand}</Row>
-                  <Row>{item.category}</Row>
-                  <Row>₹{item.price}</Row>
-                  <Button variant="danger" onClick={() => removeFromCart(item.id)}>Remove from Cart</Button>
-                </Col>
-              </Row>
-            
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul>
+            {cart.map(item => (
+              <li key={item.id}>
+                <Row>
+                  <Col>{item.model}</Col>
+                  <Col>{item.brand}</Col>
+                  <Col>₹{item.price}</Col>
+                  <Col>Quantity: {item.quantity}</Col>
+                  <Col>
+                    <Button onClick={() => addToCart(item)}>+</Button>
+                    <Button onClick={() => removeFromCart(item.id)}>-</Button>
+                  </Col>
+                </Row>
+              </li>
+            ))}
+          </ul>
+          <Button onClick={clearCart}>Clear Cart</Button>
+        </>
       )}
     </Container>
   );

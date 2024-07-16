@@ -1,12 +1,17 @@
 body {
-  background: url('./images/camera_main_bg.jpg');
-  background-size: cover;
-  background-repeat: repeat;
+  /* background: url('./images/camera_main_bg.jpg'); */
+  /* background-size: cover;
+  background-repeat: repeat; */
   
   height:100vh;
   
+  
+  
 
   
+}
+.rootBody {
+  background-color: rgba(224, 224, 224, 0.8);
 }
 
 
@@ -14,36 +19,68 @@ body {
   position: relative;
   
 }
-/* .rootBody {
-  position: relative;
-  background: url('./images/camera_main_bg.jpg');
-  background-repeat: no-repeat;
-  background-size: 100vh;
-  min-height:100vh;
-} */
+/* Global styles */
+
+.fd-col {  
+  flex-direction: column;
+
+
+}
+
+.fd-row {
+  flex-direction: row;
+}
+.h-centered {
+  margin: 0 auto;
+}
+
+.jc-sa {
+  justify-content: space-around;
+}
+
+
 nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light {
   position: sticky;
-  background: rgba(0,0,0,0.3 ) !important;
-  height: 150px;
-  width: 80%;
-  margin: 0 auto;
-  padding: 5px 20px;
+  top: 0;
+  background: white !important;
+  /* background: rgba(0, 0, 0, 0.3) !important; */
+  height: 100px;
+  width: 100%;
+  /* margin: 0 auto; */
+  
 }
 nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header {
-  background: rgba(39, 135, 10, 0.768) !important;
+  background: white !important;
   border-radius: 30px;
   height: 100%;
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+
 }
 a.navbar-brand {
   border: none !important;
 }
-.navbar h2 {
-  color: beige;
+nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header .navbar-brand h2 {
+  color: brown;
   font-size: 50px;
   font-weight: 900;
   box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
   padding: 5px;
   border-radius: 15px;
+}
+nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header .navbar-nav {
+  display: flex;
+  grid-gap: 10px;
+}
+nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header .navbar-nav a {
+  border: 1px solid black;
+
+}
+
+
+nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header .navbar-nav a h4 {
+  font-size: 15px;
 }
 
 
@@ -91,6 +128,7 @@ a.navbar-brand {
   padding: 20px;
   margin-top: 20px;
   border-radius: 10px;
+  width: 100%;
 }
 .tableHead {
   background: rgba(203, 222, 166, 0.833);
@@ -148,6 +186,9 @@ input {
 }
 .hCentered {
   margin: 0 auto;
+}
+.m-0 {
+  margin: 0;
 }
 .mt-10 {
   margin-top: 10px;
@@ -270,26 +311,41 @@ table.bordered {
   left: 200px; */
   margin: 250px auto;
   width: 60%;
-  background-color: rgba(0,0,0,0.3);
+  
+  
   
   
 }
 .loginContent h2 {
   font-size: 40px;
   padding: 10px;
-  color: antiquewhite;
   width: 60%;
-  margin: 0 auto;
+  color: brown;
+  margin: auto 0;
 }
 .loginContent .loginButtons {
   padding: 10px;
+  color: white;
+  
 }
+.loginContent .loginButtons .userLogin , .loginContent .loginButtons .adminLogin {
+  background: brown;
+  color: white;
+  width: 120px;
+  height: 60px;
+  font-size: 20px;
+}
+
+/* Admin Panel */
+
 
 
 /* HomePage */
 
+
 section.mainSection .container {
   padding: 0 50px;
+  
 }
 section.mainSection .container .searchArea {
   display: flex;
@@ -297,15 +353,6 @@ section.mainSection .container .searchArea {
 }
 
 
-
-
-/* HomePage */
-
-.homePageContent {
-  
-  margin: 200px auto 0 auto;
-
-}
 .homePageContent h1 {
   color: beige;
   background: rgba(0,0,0,0.5 );
@@ -313,16 +360,28 @@ section.mainSection .container .searchArea {
   text-align: center;
 
 }
-.homePageContent li {
-  margin: 10px 0;
-  color: yellowgreen;
-  font-size: 30px;
-  background: rgba(0,0,0,0.3 );
-}
 .homePageContent ul {
-  background: rgba(0,0,0,0.6);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 5px 0;
 }
 
+.homePageContent li {
+  
+  
+  font-size: 30px;
+  
+  list-style: none;
+}
+
+.homePageContent .productCard {
+  background: white;
+  border-radius: 20px;
+  margin: 10px 0 0 0 !important;
+  padding: 10px 15px;
+  height: 100%;
+}
 .homePageContent li row col img {
   
   border: 2px dotted white;
@@ -331,12 +390,16 @@ section.mainSection .container .searchArea {
   
   margin: 0 auto;
 }
+
 .homePageContent .imageCard {
   
   text-align: center;
   padding: 20px 0;
   
 }
+
+
+
 
 
 /* Admin Login */
@@ -395,10 +458,40 @@ section.mainSection .container .searchArea {
 
 /* Shopping Cart */
 
+
+
 .shoppingCartContent.container h1 {
   color: beige;
   margin-top: 150px;
 }
 .shoppingCartContent.container div.row {
   background: beige;
+}
+
+
+
+@media screen and (max-width: 991px) {
+  /* Home Page */
+  .homePageContent {
+    margin: 150px 0 0 0 !important;
+  
+
+  }
+/* Shopping Cart */
+
+  .cartContent.container {
+    margin: 150px 0 0 0 !important;
+  }
+
+  /* Admin Panel */
+
+  .url{
+    max-width: 80px !important;
+    text-wrap: wrap;
+    overflow: hidden;
+  }
+  .id {
+    max-width: 100px !important;
+    overflow: hidden;
+  }
 }

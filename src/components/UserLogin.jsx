@@ -67,8 +67,8 @@ const UserLogin = () => {
       <div className="user-login-box">
         <div className="text-center">
           <Row className="mb-3">
-            <Col>
-              <p className="login-text">Are you new to the website?</p>
+            <Col >
+              <p className="login-text">New Customer?</p>
               <Button variant="primary" className="m-2 login-button" onClick={() => setShowRegister(true)}>Register here</Button>
             </Col>
           </Row>
