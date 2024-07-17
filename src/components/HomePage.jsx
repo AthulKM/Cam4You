@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Container, Row, Col, Image, Button, Carousel } from 'react-bootstrap';
 import { ProductContext } from './ProductContext';
 import { ShoppingCartContext } from './ShoppingCartContext';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const HomePage = () => {
   const { products } = useContext(ProductContext);
@@ -10,7 +11,7 @@ const HomePage = () => {
   return (
     <Container className='homePageContent'>
       
-      <ul className='m-0' >
+      {/* <ul className='m-0' >
         {products.map(product => {
           const cartItem = cart.find(item => item.id === product.id) || {};
           return (
@@ -39,7 +40,49 @@ const HomePage = () => {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
+
+
+      <Carousel
+        interval={1000}
+        controls={true}
+        indicators={false}
+        pause={'hover'}
+        prevIcon={<FaArrowLeft className="custom-arrow left" />}
+        nextIcon={<FaArrowRight className="custom-arrow right" />}>
+        
+        {products.map(product => {
+          const cartItem = cart.find(item => item.id === product.id) || {};
+          return (
+            <Carousel.Item key={product.id}>
+              
+              <div className='m-0 productCard' >
+                <Col className='imageCard h-centered'>
+                  <Image src={product.image} alt={product.model} width="150px" height="150px" rounded />
+                </Col>
+                <Col className='m-0 ProductDetails' >
+                  <Row>{product.model}</Row>
+                  <Row>{product.brand}</Row>
+                  <Row>{product.category}</Row>
+                  <Row>₹{product.price}</Row>
+                </Col>
+                <Col className='d-flex fd-col m-0 jc-sa'>
+                  <Button className='h-centered' onClick={() => addToCart(product)}>Add to Cart</Button>
+                  {cartItem.quantity > 0 && (
+                    <>
+                      <span className='h-centered' >Qty: {cartItem.quantity}</span>
+                      <Button className='h-centered'  onClick={() => removeFromCart(product.id)}>Remove from Cart</Button>
+                    </>
+                  )}
+                </Col>
+              </div>
+              
+              
+              
+            </Carousel.Item>
+          );
+        })}
+      </Carousel>
     </Container>
   );
 };

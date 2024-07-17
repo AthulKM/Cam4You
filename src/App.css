@@ -10,9 +10,9 @@ body {
 
   
 }
-.rootBody {
+/* .rootBody {
   background-color: rgba(224, 224, 224, 0.8);
-}
+} */
 
 
 #root {
@@ -397,6 +397,12 @@ section.mainSection .container .searchArea {
   padding: 20px 0;
   
 }
+.m-0.ProductDetails.col {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  align-items: center;
+}
 
 
 
@@ -467,6 +473,28 @@ section.mainSection .container .searchArea {
 .shoppingCartContent.container div.row {
   background: beige;
 }
+
+
+/* Carousel */
+.carousel {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.custom-arrow {
+  font-size: 2rem;
+  color: #000;
+}
+
+.custom-arrow.left {
+  left: 10px;
+}
+
+.custom-arrow.right {
+  right: 10px;
+}
+
 
 
 
