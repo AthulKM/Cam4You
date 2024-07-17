@@ -54,8 +54,8 @@ const UserLogin = () => {
         password: '',
       });
       setError(null);
-      
       navigate('/HomePage'); 
+      window.location.reload();
     } catch (error) {
       setError(error.message);
     }
