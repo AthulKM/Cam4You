@@ -21,8 +21,14 @@ const ShoppingCart = () => {
                   <Col>₹{item.price}</Col>
                   <Col>Quantity: {item.quantity}</Col>
                   <Col>
-                    <Button onClick={() => addToCart(item)}>+</Button>
-                    <Button onClick={() => removeFromCart(item.id)}>-</Button>
+                    <Button onClick={() => {
+                      addToCart(item)
+                      
+                    }}>Add more</Button>
+                    <Button onClick={() => {
+                      removeFromCart(item.id)
+                     
+                    }}>Remove</Button>
                   </Col>
                 </Row>
               </li>

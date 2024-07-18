@@ -71,11 +71,24 @@ nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header .na
 }
 nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header .navbar-nav {
   display: flex;
-  grid-gap: 10px;
+  grid-gap: 20px;
+}
+
+.cartIcon {
+  height: 40px;
+  width: 40px;
+  position: relative;
+}
+.countCartItems {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: darkgreen;
+  font-size: 20px;
+  margin: -10px 1px ;
 }
 nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header .navbar-nav a {
-  border: 1px solid black;
-
+  padding: 0;
 }
 
 
@@ -116,6 +129,8 @@ nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header .na
 
 
 }
+
+
 .adminPanelContainer .nav-tabs .nav-item button.nav-link  {
   color: maroon;
   font-weight: 800;
@@ -340,6 +355,38 @@ table.bordered {
 
 
 
+
+/* Choices */
+
+.choices button.mt-3.btn.btn-primary {
+  background: none;
+  color: black;
+  border: 1px solid black;
+}
+.choices .accordion {
+  width: 50%;
+}
+.choices .accordion ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+
+}
+.choices .accordion ul li button{
+  
+  width: 50%;
+  background: none;
+  color: black;
+  
+  
+}
+.choices .selected {
+  background-color: #007bff !important;
+  color: white !important;
+}
+
+
 /* HomePage */
 
 
@@ -502,6 +549,12 @@ section.mainSection .container .searchArea {
 
 
 @media screen and (max-width: 991px) {
+  /* App */
+  nav.mainNavbar.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light .header .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 20px;
+  }
   /* Home Page */
   .homePageContent {
     margin: 150px 0 0 0 !important;
@@ -526,3 +579,14 @@ section.mainSection .container .searchArea {
     overflow: hidden;
   }
 }
+
+@media screen and (min-width: 991.1px) {
+  
+  /* Choices */
+  .choices .accordion {
+    width: 30%;
+  }
+}
+
+
+

@@ -54,7 +54,7 @@ const UserLogin = () => {
         password: '',
       });
       setError(null);
-      navigate('/HomePage'); 
+      navigate('/Choices'); 
       window.location.reload();
     } catch (error) {
       setError(error.message);
