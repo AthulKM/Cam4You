@@ -49,12 +49,16 @@ export const ShoppingCartProvider = ({ children }) => {
     });
   };
 
+  const removeItemCompletely = (productId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  };
+
   const clearCart = () => {
     setCart([]);
   };
 
   return (
-    <ShoppingCartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, setCountCartItems, countCartItems }}>
+    <ShoppingCartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, setCountCartItems, countCartItems, removeItemCompletely }}>
       {children}
     </ShoppingCartContext.Provider>
   );

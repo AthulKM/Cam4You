@@ -4,12 +4,14 @@ import { ProductContext } from './ProductContext';
 import { ShoppingCartContext } from './ShoppingCartContext';
 import { useLocation } from 'react-router-dom';
 import '../App.css';
+import { WishListContext } from './WishListContext';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
 
 const HomePage = () => {
+  const { addToWishlist } = useContext(WishListContext);
   const { products } = useContext(ProductContext);
   const { addToCart, cart } = useContext(ShoppingCartContext);
   const [alert, setAlert]=useState({show:false, message: ''})
@@ -32,7 +34,7 @@ const HomePage = () => {
     addToCart(product);
     setAlert({ show: true, message: `${product.brand} ${product.model} has been added to your cart!` });
     
-    setTimeout(() => setAlert({ show: false, message: '' }), 2000);
+    setTimeout(() => setAlert({ show: false, message: '' }), 1000);
     
   }
 
@@ -56,6 +58,7 @@ const HomePage = () => {
                 </Col>
                 <Col className='d-flex fd-col m-0 jc-sa'>
                   <Button className='h-centered' onClick={() => handleAddToCart(product)}>Add to Cart</Button>
+                  <Button className='h-centered' onClick={() => addToWishlist(product)}>Add to Wishlist</Button>
                 </Col>
               </div>
             </li>

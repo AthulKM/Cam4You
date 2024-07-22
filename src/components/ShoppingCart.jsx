@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ShoppingCartContext } from './ShoppingCartContext';
+import '../App.css';
 
 const ShoppingCart = () => {
-  const { cart, addToCart, removeFromCart, clearCart } = useContext(ShoppingCartContext);
+  const { cart, addToCart, removeFromCart, clearCart, removeItemCompletely } = useContext(ShoppingCartContext);
 
   return (
     <Container className='cartContent'>
@@ -23,12 +24,13 @@ const ShoppingCart = () => {
                   <Col>
                     <Button onClick={() => {
                       addToCart(item)
-                      
-                    }}>Add more</Button>
+                    }}>+</Button>
                     <Button onClick={() => {
                       removeFromCart(item.id)
-                     
-                    }}>Remove</Button>
+                    }}>-</Button>
+                    <Button variant="danger" onClick={() => removeItemCompletely(item.id)}>
+                      Remove from Cart
+                    </Button>
                   </Col>
                 </Row>
               </li>

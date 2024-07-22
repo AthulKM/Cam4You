@@ -1,6 +1,10 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 export const UserContext = createContext();
+localStorage.setItem('users', JSON.stringify([{
+  username: 'user',
+  password:'user'
+}]))
 
 export const UserProvider = ({ children }) => {
   const [users, setUsers] = useState(() => {

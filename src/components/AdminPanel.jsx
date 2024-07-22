@@ -63,7 +63,7 @@ const AdminPanel = () => {
       model: "",
       brand: "",
       category: "",
-      price: 0,
+      price: null,
       image:"",
     });
     

@@ -366,11 +366,15 @@ table.bordered {
 .choices .accordion {
   width: 50%;
 }
+.choices .accordion .accordion-body {
+  overflow: hidden;
+}
 .choices .accordion ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   grid-gap: 10px;
+  margin: 0 auto;
 
 }
 .choices .accordion ul li button{
@@ -378,6 +382,7 @@ table.bordered {
   width: 50%;
   background: none;
   color: black;
+  min-width: 150px;
   
   
 }
@@ -520,7 +525,12 @@ section.mainSection .container .searchArea {
 .shoppingCartContent.container div.row {
   background: beige;
 }
-
+.cartContent.container ul li {
+  margin: 5px 0;
+}
+.cartContent.container ul li button {
+  margin: 0 5px;
+}
 
 /* Carousel */
 .carousel {
@@ -566,6 +576,7 @@ section.mainSection .container .searchArea {
   .cartContent.container {
     margin: 150px 0 0 0 !important;
   }
+  
 
   /* Admin Panel */
 
